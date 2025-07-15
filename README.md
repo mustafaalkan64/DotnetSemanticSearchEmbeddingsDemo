@@ -1,6 +1,6 @@
 # 🧠 Dotnet Semantic Search with Embeddings Demo
 
-This project is a **.NET 9**-based backend solution demonstrating **semantic search** using **AI-generated embeddings** and a **vector database**. It uses **Ollama (Mistral model)** for generating embeddings and **Qdrant** as the vector store.
+This project is a **.NET 9**-based backend solution demonstrating **semantic search** using **AI-generated embeddings** and a **vector database**. It uses **Ollama (nomic-embed-text model)** for generating embeddings and **Qdrant** as the vector store.
 
 ---
 
@@ -38,7 +38,3 @@ This project is a **.NET 9**-based backend solution demonstrating **semantic sea
 - Semantic Search API: http://localhost:5000
 - Qdrant Dashboard: http://localhost:6333
 - Ollama API: http://localhost:11434
-
-Before sending embedding requests, make sure the Mistral model is pulled:
-
-ollama pull nomic-embed-text
