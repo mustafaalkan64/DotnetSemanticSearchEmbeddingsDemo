@@ -38,9 +38,3 @@ This project is a **.NET 9**-based backend solution demonstrating **semantic sea
 - Semantic Search API: http://localhost:5000
 - Qdrant Dashboard: http://localhost:6333
 - Ollama API: http://localhost:11434
-
-If ollama is not installed on your local yet, first you need to install ollama on your local :
-https://ollama.com/download/windows
-
-Before sending embedding requests, make sure the Nomic-embed-text model is required to be pulled:
-ollama pull nomic-embed-text
