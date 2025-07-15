@@ -39,6 +39,6 @@ This project is a **.NET 9**-based backend solution demonstrating **semantic sea
 - Qdrant Dashboard: http://localhost:6333
 - Ollama API: http://localhost:11434
 
-Before sending embedding requests, make sure the Mistral model is pulled:
+Before sending embedding requests, make sure the Nomic-embed-text model is required to be pulled:
 
 ollama pull nomic-embed-text
