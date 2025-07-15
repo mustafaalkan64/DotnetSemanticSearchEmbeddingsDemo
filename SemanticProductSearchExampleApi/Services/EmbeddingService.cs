@@ -13,7 +13,7 @@
 
         public async Task<float[]> GetEmbeddingAsync(string input)
         {
-            var response = await _httpClient.PostAsJsonAsync("http://localhost:11434/api/embed", new
+            var response = await _httpClient.PostAsJsonAsync("http://localhost:11434/api/embeddings", new
             {
                 model = "nomic-embed-text",
                 prompt = input

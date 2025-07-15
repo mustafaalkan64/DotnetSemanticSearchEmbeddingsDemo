@@ -10,44 +10,21 @@
     {
         private readonly QdrantGrpcClient _client;
         private const string CollectionName = "documents";
-        private const ulong VectorSize = 4; // Örnek vektör boyutu
+        private const ulong VectorSize = 768; // Örnek vektör boyutu
 
         private readonly QdrantClient _qdrantClient;
 
         public QdrantClientService(string host = "localhost", int port = 6334) // Qdrant gRPC portu genellikle 6334'tür
         {
             _qdrantClient = new QdrantClient(host, port);
-
         }
-
-        //public async Task CreateCollectionAsync(string collectionName, ulong vectorSize)
-        //{
-        //    await _qdrantClient.CreateCollectionAsync(
-
-        //        collectionName: CollectionName,
-        //        vectorsConfig: new VectorParams
-        //        {
-        //            Size = vectorSize,
-        //            Distance = Distance.Cosine
-        //        });
-
-        //    System.Console.WriteLine($"Koleksiyon '{collectionName}' oluşturuldu.");
-        //}
 
         private async Task CreateCollectionAsync(string collectionName)
         {
             // Koleksiyonun zaten var olup olmadığını kontrol edebilirsiniz.
             var collections = await _qdrantClient.ListCollectionsAsync();
-            if (collections.Contains(collectionName))
+            if (!collections.Contains(collectionName))
             {
-                Console.WriteLine($"Koleksiyon '{collectionName}' zaten mevcut. Siliniyor ve yeniden oluşturuluyor...");
-                await _qdrantClient.DeleteCollectionAsync(collectionName);
-                await Task.Delay(100); // Küçük bir bekleme süresi
-            }
-
-            else
-            {
-
                 await _qdrantClient.CreateCollectionAsync(
 
                    collectionName: CollectionName,
