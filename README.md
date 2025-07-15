@@ -1,30 +1,30 @@
 # 🧠 Dotnet Semantic Search with Embeddings Demo
 
-This project is a complete **.NET 9**-based semantic search solution using AI-generated **embeddings** and a **vector database**. It demonstrates how to perform advanced **semantic product search** with **Dockerized microservices**, **Qdrant**, **Ollama**, and two different UIs: **HTML** and **Blazor**.
+This project is a **.NET 9**-based backend solution demonstrating **semantic search** using **AI-generated embeddings** and a **vector database**. It uses **Ollama (Mistral model)** for generating embeddings and **Qdrant** as the vector store.
 
 ---
 
 ## 🔍 Features
 
-- ✅ AI-powered **semantic search** via embedding vectors
-- ✅ **Product catalog** search using meaning-based similarity
-- ✅ Embedding generation with **Ollama** (Mistral model)
-- ✅ Vector storage and similarity search with **Qdrant**
+- ✅ AI-powered **semantic product search**
+- ✅ Embedding generation using **Ollama** (Mistral model)
+- ✅ Vector storage & similarity search with **Qdrant**
+- ✅ RESTful **.NET 9 API** to query and manage semantic data
 - ✅ **Fully dockerized** with `docker-compose`
-- ✅ Ready-to-use development setup with a single command
+- ✅ Ready-to-run with a single command
 
 ---
 
 ## 🧱 Architecture
 
 ```plaintext
-+-------------------+        +-----------------+       +---------------+
-|   Blazor UI       | <----> |  .NET API       | <-->  |   Qdrant DB   |
-|   (Client-side)   |        |  (Semantic API) |       | (Vector Store)|
-+-------------------+        +-----------------+       +---------------+
-          ^                           ^
-          |                           |
-+-------------------+        +---------------------------+
-|   HTML UI         |        |  Ollama (nomic-embed-text)|
-|  (MVC Frontend)   |        |  Embedding Model          |
-+-------------------+        +---------------------------+
++------------------+        +-----------------+       +---------------+
+|   Client (e.g.   | <----> |  .NET API       | <-->  |   Qdrant DB   |
+| Postman / CURL)  |        |  (Semantic API) |       | (Vector Store)|
++------------------+        +-----------------+       +---------------+
+                                   |
+                                   |
+                          +------------------+
+                          |  Ollama (Mistral)|
+                          |  Embedding Model |
+                          +------------------+
