@@ -11,12 +11,14 @@
         private readonly QdrantGrpcClient _client;
         private const string CollectionName = "documents";
         private const ulong VectorSize = 768; // Örnek vektör boyutu
-
+        private const int QdrantPort = 6334;
         private readonly QdrantClient _qdrantClient;
 
-        public QdrantClientService(string host = "localhost", int port = 6334) // Qdrant gRPC portu genellikle 6334'tür
+        public QdrantClientService()
         {
-            _qdrantClient = new QdrantClient(host, port);
+            var envValue = Environment.GetEnvironmentVariable("QDRANT_API_URL");
+            var qdrantUrl = !string.IsNullOrEmpty(envValue) ? envValue : "localhost";
+            _qdrantClient = new QdrantClient(qdrantUrl, QdrantPort);
         }
 
         private async Task CreateCollectionAsync(string collectionName)
