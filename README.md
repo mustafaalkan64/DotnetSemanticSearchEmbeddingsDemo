@@ -28,3 +28,17 @@ This project is a **.NET 9**-based backend solution demonstrating **semantic sea
                           |  Ollama (Mistral)|
                           |  Embedding Model |
                           +------------------+
+
+```
+
+---
+
+## 🔗 Services:
+
+- Semantic Search API: http://localhost:5000
+- Qdrant Dashboard: http://localhost:6333
+- Ollama API: http://localhost:11434
+
+Before sending embedding requests, make sure the Mistral model is pulled:
+
+ollama pull nomic-embed-text
